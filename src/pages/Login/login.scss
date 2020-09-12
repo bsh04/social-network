@@ -7,34 +7,17 @@
   flex-direction: column;
   height: 100vh;
 
-  .custom-alert {
-    position: absolute;
-    @-webkit-keyframes slideDown {
-      0%, 100% { -webkit-transform: translateY(-50px); }
-      10%, 90% { -webkit-transform: translateY(0px); }
-    }
-    @-moz-keyframes slideDown {
-      0%, 100% { -moz-transform: translateY(-50px); }
-      10%, 90% { -moz-transform: translateY(0px); }
-    }
-  }
-
-
-
 }
 
 
-.card-login {
+.login__card {
   padding: 10px;
   font-family: 'Roboto Light', sans-serif;
   width: 350px;
-  background-color: $color_lite;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   border-radius: 10px;
 
-  @media screen and (max-width: 1000px){
-
-  }
 
   & button {
     width: 50%;
@@ -67,7 +50,7 @@
 
 
 
-  & form {
+  & .form {
     height: 35px;
     border: none;
     background-color: $color_lite;
@@ -81,8 +64,18 @@
     margin-top:20px;
     text-align: center;
     transition: .2s box-shadow ease-in;
+
+    &.form_wrong {
+      box-shadow: 0 0 2px $color_danger;
+
+      &:hover {
+        box-shadow: 0 0 2px $color_danger;
+        transition: .2s box-shadow ease-in;
+      }
+
+    }
+
     &:hover {
-      background-color: $color_lite;
       box-shadow: 0 0 5px $color_secondary;
       transition: .2s box-shadow ease-in;
     }
@@ -94,22 +87,49 @@
       padding-left: 5px;
       padding-right: 5px;
       background-color: $color_lite;
-      border-right: .5px solid $color_secondary;
+      cursor: pointer;
     }
 
     & input {
+      font-size: 16px;
       padding-left: 5px;
       height: 100%;
       width: 100%;
       border: none;
       background-color: $color_lite;
       outline: none;
+      cursor: pointer;
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
 
+    }
+  }
+
+  @media screen and (max-width: 768px){
+    width: 50%;
+  }
+
+  @media screen and (max-width: 600px){
+    width: 70%;
+  }
+  @media screen and (max-width: 430px){
+    width: 80%;
+
+    & h2 {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    & form {
+
+      & input {
+        font-size: 12px;
+      }
     }
   }
 }

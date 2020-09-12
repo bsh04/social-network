@@ -20,16 +20,16 @@ const Register = (props) => {
             {/*        <CustomAlert visibleAlert={setAlertVisible}/>*/}
             {/*        : null*/}
             {/*}*/}
-            <div className='card-login'>
+            <div className='login__card'>
                 <h2>Создание нового аккаунта</h2>
-                <form>
+                <form className='form'>
                     <label className='d-flex align-items-center'>
                         <PersonIcon className='text-black-50'/>
                     </label>
                     <input type="number" className='login-inputs' placeholder='Введите свой номер телефона'
                            aria-label='Номер телефона'/>
                 </form>
-                <form>
+                <form className='form'>
                     <label className='d-flex align-items-center'>
                         <LockIcon className='text-black-50'/>
                     </label>

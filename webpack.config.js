@@ -6,6 +6,7 @@ module.exports = {
     entry: path.resolve('./src/index.js'),
     output: {
         path: path.resolve('./dist'),
+        publicPath: "/",
         filename: '[name]-[hash].bundle.js'
     },
     optimization: {
@@ -24,7 +25,8 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -33,7 +35,8 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
-                }
+                },
+
             },
             {
                 test: /\.css$/i,
