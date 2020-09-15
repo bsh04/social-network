@@ -4,10 +4,10 @@ import LockIcon from "@material-ui/icons/Lock";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 
-const Register = (props) => {
+const Register = () => {
 
     const [visiblePassword, setVisiblePassword] = useState(false)
-    const [alertVisible, setAlertVisible] = useState(false)
+    const [, setAlertVisible] = useState(false)
 
     const handleSubmit = () => {
         setAlertVisible(true)
@@ -20,28 +20,28 @@ const Register = (props) => {
             {/*        <CustomAlert visibleAlert={setAlertVisible}/>*/}
             {/*        : null*/}
             {/*}*/}
-            <div className='login__card'>
+            <div className='login__card login__card_theme'>
                 <h2>Создание нового аккаунта</h2>
-                <form className='form'>
+                <form className='form form_theme'>
                     <label className='d-flex align-items-center'>
                         <PersonIcon className='text-black-50'/>
                     </label>
-                    <input type="number" className='login-inputs' placeholder='Введите свой номер телефона'
+                    <input type="number" placeholder='Введите свой номер телефона'
                            aria-label='Номер телефона'/>
                 </form>
-                <form className='form'>
+                <form className='form form_theme'>
                     <label className='d-flex align-items-center'>
                         <LockIcon className='text-black-50'/>
                     </label>
-                    <input type={visiblePassword ? 'text' : "password"} className='login-inputs'
+                    <input type={visiblePassword ? 'text' : "password"}
                            placeholder='Введите свой пароль'
                            aria-label='Пароль'/>
                     {
                         visiblePassword ?
-                            <VisibilityOffIcon className='text-black-50 mr-2'
+                            <VisibilityOffIcon className='label mr-2'
                                                onClick={() => setVisiblePassword(false)}/>
                             :
-                            <VisibilityIcon className='text-black-50  mr-2' onClick={() => setVisiblePassword(true)}/>
+                            <VisibilityIcon className='label mr-2' onClick={() => setVisiblePassword(true)}/>
                     }
                 </form>
                 <div className='d-flex justify-content-center pt-4'>
