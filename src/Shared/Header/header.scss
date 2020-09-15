@@ -3,7 +3,6 @@
 .navbar-app {
   width: 100%;
   height: 50px;
-  background-color: #f1f3f8;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -13,10 +12,8 @@
     align-items: center;
     & .navbar-app__brand {
       border: none;
-      color: $color_success
     }
   }
-
 
   & .navbar-app__body {
     width: 95%;
@@ -29,35 +26,15 @@
       align-items: center;
 
       & .navbar-app__login-body {
-        border: 1px solid $color_success;
         padding: 5px 10px 5px 10px;
         border-radius: 5px;
-        background-color: #f1f3f8;
-
-        &:hover {
-          transition: .3s background-color;
-          background-color: $color_success;
-          color: white;
-
-          & .navbar-app__login {
-            transition: .3s color;
-            color: white;
-          }
-        }
-
-        &:active {
-          background-color: $color_success_press;
-        }
 
         & .navbar-app__login {
           text-decoration: none;
-          transition: .3s color;
-          color: gray;
         }
       }
 
       & .navbar-app__register {
-        color: gray;
         padding-right: 20px;
       }
     }

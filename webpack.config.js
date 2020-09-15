@@ -1,12 +1,15 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CssCleanupPlugin = require('css-cleanup-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve('./src/index.js'),
+    entry: path.resolve('src/index.js'),
     output: {
-        path: path.resolve('./dist'),
         publicPath: "/",
+        path: path.resolve('./dist'),
         filename: '[name]-[hash].bundle.js'
     },
     optimization: {
@@ -25,7 +28,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist',
+        contentBase: 'dist',
         historyApiFallback: true
     },
     module: {
@@ -36,21 +39,17 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 },
-
             },
             {
                 test: /\.css$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ],
+                use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.scss$/i,
                 use: [
                     'style-loader',
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ],
             },
             {
@@ -70,7 +69,15 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve('./public/index.html')
-        })
+            template: './public/index.html',
+            filename: 'index.html'
+        }),
+        new LinkTypePlugin({
+            '**/*.css' : 'text/css'
+        }),
+        new MiniCssExtractPlugin({
+            filename: './src/index.scss',
+        }),
+        new CssCleanupPlugin()
     ]
 }

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
-import './header.scss'
+import './header.css'
+import '../../Theme/light_theme.scss'
 
 const Header = (props) => {
-
 
     const [reduceHeader, setReduceHeader] = useState(false)
 
