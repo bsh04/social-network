@@ -6,110 +6,93 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-
-  .custom-alert {
-    position: absolute;
-    @-webkit-keyframes slideDown {
-      0%, 100% { -webkit-transform: translateY(-50px); }
-      10%, 90% { -webkit-transform: translateY(0px); }
-    }
-    @-moz-keyframes slideDown {
-      0%, 100% { -moz-transform: translateY(-50px); }
-      10%, 90% { -moz-transform: translateY(0px); }
-    }
-  }
-
-
-
 }
 
-
-.card-login {
+.login__card {
   padding: 10px;
   font-family: 'Roboto Light', sans-serif;
   width: 350px;
-  background-color: $color_lite;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   border-radius: 10px;
 
-  @media screen and (max-width: 1000px){
-
-  }
 
   & button {
     width: 50%;
     border-radius: 5px;
-    border: 1px solid $color_secondary;
-    background-color: $color_success;
-    color: $color_lite;
-    transition: .1s background-color ease;
     outline: none;
 
-    &:active {
-      transition: .1s background-color ease;
-      background-color: $color_success_press;
-    }
   }
 
   & h2 {
-    border-bottom: 1px solid $color_secondary;
     padding: 10px 0 10px 10px;
   }
 
   & a {
     text-decoration: none;
-    color: $color_info;
-
-    &:active {
-      color: $color_info_press
-    }
   }
 
 
-
-  & form {
+  & .form {
     height: 35px;
     border: none;
-    background-color: $color_lite;
-    box-shadow: 0 0 2px $color_secondary;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     padding: 0;
     flex-direction: row;
     align-items: center;
-    margin-top:20px;
+    margin-top: 20px;
     text-align: center;
-    transition: .2s box-shadow ease-in;
-    &:hover {
-      background-color: $color_lite;
-      box-shadow: 0 0 5px $color_secondary;
-      transition: .2s box-shadow ease-in;
-    }
+  }
 
-    & label {
-      height: 100%;
+  & label {
+    height: 100%;
+    margin: 0;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+  }
+
+  & input {
+    font-size: 16px;
+    padding-left: 5px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
       margin: 0;
-      font-weight: bold;
-      padding-left: 5px;
-      padding-right: 5px;
-      background-color: $color_lite;
-      border-right: .5px solid $color_secondary;
     }
 
-    & input {
-      padding-left: 5px;
-      height: 100%;
-      width: 100%;
-      border: none;
-      background-color: $color_lite;
-      outline: none;
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+  }
 
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 430px) {
+    width: 80%;
+
+    & h2 {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    & form {
+
+      & input {
+        font-size: 12px;
+      }
     }
   }
 }

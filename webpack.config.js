@@ -1,10 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CssCleanupPlugin = require('css-cleanup-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve('./src/index.js'),
+    entry: path.resolve('src/index.js'),
     output: {
+        publicPath: "/",
         path: path.resolve('./dist'),
         filename: '[name]-[hash].bundle.js'
     },
@@ -24,7 +28,8 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: 'dist',
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -33,41 +38,38 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
-                }
+                },
             },
             {
                 test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.scss$/i,
                 use: [
                     'style-loader',
                     'css-loader',
+                    'sass-loader',
                 ],
             },
             {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ],
-            },
-            {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
+                test: /\.(png|svg|jpg|gif)$/,
+                loader: 'file-loader'
             }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve('./public/index.html')
-        })
+            template: './public/index.html',
+            filename: 'index.html'
+        }),
+        new LinkTypePlugin({
+            '**/*.css' : 'text/css'
+        }),
+        new MiniCssExtractPlugin({
+            filename: './src/index.scss',
+        }),
+        new CssCleanupPlugin()
     ]
 }

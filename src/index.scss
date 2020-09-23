@@ -1,25 +1,18 @@
 $color_main: #26c6da;
-$color_info: #0260E8;
-$color_info_press: #0351C1;
+$color_info_light: #0260E8;
+$color_info_press_light: #0351C1;
 $color_primary: #607d8b;
 $color_secondary: #bdbdbd;
 $color_lite: #f5f5f5;
 $color_success: #4BB462;
 $color_success_press: #008736;
 $color_danger: #e53935;
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  width: 100vw;
-}
+$color_info_dark: #3870ff;
+$color_info_press_dark: #1e5dfc;
+$color_body_dark: #23272b;
+$color_primary_dark: #111314;
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }

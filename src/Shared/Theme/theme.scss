@@ -1,0 +1,13 @@
+.toggle-theme {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 10px 10px 0;
+
+
+  & .light-theme {
+    color: yellow;
+  }
+}

@@ -1,0 +1,139 @@
+@import '../index';
+
+.dark {
+  transition: background-color .5s;
+  background-color: $color_body_dark;
+
+  & .login__card_theme {
+    background-color: $color_primary_dark;
+    transition: background-color .5s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+
+    & button {
+      border: 1px solid $color_success;
+      background-color: $color_primary_dark;
+      color: $color_lite;
+      transition: .3s background-color;
+
+      &:active {
+        border: 1px solid $color_success_press;
+        transition: .1s background-color ease;
+        background-color: $color_success_press;
+      }
+
+      &:hover {
+        transition: .3s background-color ease;
+        background-color: $color_success;
+      }
+    }
+
+    & h2 {
+      transition: color .5s;
+      color: $color_secondary;
+      border-bottom: 1px solid $color_secondary;
+    }
+
+    & a {
+      color: $color_info_dark;
+
+      &:active {
+        color: $color_info_press_dark
+      }
+    }
+
+    & p {
+      color: $color_secondary
+    }
+
+    & .form_theme {
+      background-color: $color_primary_dark;
+      box-shadow: 0 0 2px $color_lite;
+      transition: .2s box-shadow ease-in, background-color .5s;
+
+
+      & .label {
+        color: $color_secondary
+      }
+
+      &.form_wrong_theme {
+        box-shadow: 0 0 3px $color_danger;
+
+        &:hover {
+          box-shadow: 0 0 1px $color_danger;
+          transition: .2s box-shadow ease-in;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 0 5px $color_lite;
+        transition: .2s box-shadow ease-in;
+      }
+
+      & input {
+        transition: background-color .5s;
+        background-color: $color_primary_dark;
+        color: $color_secondary;
+        &:-webkit-autofill {
+          -webkit-box-shadow: inset 0 0 0 50px $color_primary_dark !important;
+          color: $color_secondary;
+          transition: .5s box-shadow, .5s color;
+        }
+
+        &::placeholder {
+          color: $color_secondary
+        }
+      }
+    }
+  }
+
+
+  & .navbar-app {
+    background-color: $color_body_dark;
+
+    transition: .5s background-color;
+
+    & .navbar-app__brand-body {
+      & .navbar-app__brand {
+        color: $color_success;
+      }
+    }
+
+
+    & .navbar-app__body {
+      & .navbar-app__items {
+        & .navbar-app__login-body {
+          border: 1px solid $color_success;
+          background-color: $color_body_dark;
+          transition: .3s background-color;
+          cursor: pointer;
+
+          &:hover {
+            transition: .3s background-color, color;
+            background-color: $color_success;
+            color: white;
+
+            & .navbar-app__login {
+              transition: .3s color;
+              color: black;
+            }
+          }
+
+          &:active {
+            background-color: $color_success_press;
+          }
+
+          & .navbar-app__login {
+            text-decoration: none;
+            transition: .3s color;
+            color: white;
+          }
+        }
+
+        & .navbar-app__register {
+          color: gray;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}
