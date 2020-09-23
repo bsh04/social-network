@@ -45,7 +45,7 @@ const Login = (props) => {
             <div className='login__card login__card_theme'>
                 <h2>Вход в аккаунт</h2>
                 <form
-                    className={validPhone ? 'form form_theme form_theme' : 'form form_theme form_wrong_theme '}>
+                    className={validPhone ? 'form form_theme' : 'form form_theme form_wrong_theme '}>
                     <label className='d-flex align-items-center'>
                         <PersonIcon className='label'/>
                     </label>
@@ -59,7 +59,7 @@ const Login = (props) => {
                     />
                 </form>
                 <form
-                    className={validPassword ? 'form form_theme form_theme' : 'form form_theme form_wrong_theme'}>
+                    className={validPassword ? 'form form_theme' : 'form form_theme form_wrong_theme'}>
                     <label className='d-flex align-items-center'>
                         <LockIcon className='label'/>
                     </label>

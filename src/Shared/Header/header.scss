@@ -12,6 +12,10 @@
     align-items: center;
     & .navbar-app__brand {
       border: none;
+
+      & img {
+        width: 30px;
+      }
     }
   }
 

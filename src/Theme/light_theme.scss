@@ -61,6 +61,13 @@
         background-color: $color_lite;
         color: $color_primary;
 
+        &:-webkit-autofill {
+          -webkit-box-shadow: inset 0 0 0 50px $color_lite !important;
+          color: $color_primary;
+          transition: .5s box-shadow, .5s color;
+        }
+
+
         &::placeholder {
           color: $color_primary
         }
@@ -74,7 +81,7 @@
 
     & .navbar-app__brand-body {
       & .navbar-app__brand {
-        color: $color_success
+        color: $color_success;
       }
     }
 

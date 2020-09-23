@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import './header.css'
 import '../../Theme/light_theme.scss'
+import brand from '../../../assets/icons/brand-icon.png'
 
 const Header = (props) => {
 
@@ -21,7 +22,10 @@ const Header = (props) => {
         <div className="navbar-app">
             <div className='navbar-app__body'>
                 <div className='navbar-app__brand-body'>
-                    <NavLink className="navbar-app__brand" to="/">SN</NavLink>
+                    <NavLink className="navbar-app__brand" to="/">
+                        <h1>Brand</h1>
+                        {/*<img src={brand}/>*/}
+                    </NavLink>
                 </div>
                 <div className='navbar-app__items'>
                     <NavLink className="navbar-app__register" to="/register">Регистрация</NavLink>
