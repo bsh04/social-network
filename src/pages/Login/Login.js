@@ -6,6 +6,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import {NavLink} from "react-router-dom";
+import {useSelector} from 'react-redux'
 
 
 const Login = (props) => {
@@ -17,25 +18,23 @@ const Login = (props) => {
     const [validPhone, setValidPhone] = useState(true)
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
+    const user = useSelector(store => store.user)
 
-    const user = {
-        phone: '89969378313',
-        password: 'admin'
-    }
+    console.log(user)
 
     const handleSubmit = () => {
 
-        if (user.password === password) {
-            setValidPassword(true)
-        } else {
-            setValidPassword(false)
-        }
-
-        if (user.phone === phone) {
-            setValidPhone(true)
-        } else {
-            setValidPhone(false)
-        }
+        // if (user.password === password) {
+        //     setValidPassword(true)
+        // } else {
+        //     setValidPassword(false)
+        // }
+        //
+        // if (user.phone === phone) {
+        //     setValidPhone(true)
+        // } else {
+        //     setValidPhone(false)
+        // }
 
         setAlertVisible(true)
     }
