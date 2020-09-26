@@ -1,0 +1,41 @@
+@import '../../index';
+
+.main {
+  height: 100%;
+  width: 100vw;
+  justify-content: center;
+  padding: 40px;
+
+  &__body {
+    padding: 20px;
+    max-width: 1920px;
+    height: 100%;
+    border-radius: 10px;
+  }
+  &__left-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    align-items: center;
+
+    &-item {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      & p {
+        text-align: center;
+        margin: 0;
+        padding: 5px 0;
+      }
+    }
+  }
+
+}

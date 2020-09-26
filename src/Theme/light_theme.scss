@@ -122,4 +122,37 @@
       }
     }
   }
+
+  .main {
+
+    &__body_theme {
+      border-top: 2px solid $color_primary;
+      border-bottom: 2px solid $color_primary;
+    }
+
+    &__left-menu_theme {
+      background-color: #fff;
+      border: 1px solid $color_primary_dark;
+    }
+    &__left-menu-item_theme {
+      background-color: #fff;
+      border: 1px solid $color_body_dark;
+      transition: .3s background-color;
+
+      & p {
+        color: $color_body_dark;
+        transition: .5s color;
+      }
+
+      &:hover {
+        background-color: $color_primary;
+        transition: .3s background-color;
+      }
+
+      & p:hover {
+        color: $color_lite;
+        transition: .3s color;
+      }
+    }
+  }
 }
